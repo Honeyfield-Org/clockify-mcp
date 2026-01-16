@@ -133,10 +133,13 @@ Add to your Claude configuration:
 
 ## Getting Your API Key
 
-1. Log in to Clockify
-2. Go to Profile Settings
-3. Navigate to "API" section
-4. Click "Generate" to create a new API key
+1. Log in to [Clockify](https://clockify.me)
+2. Click on your profile icon (top right) → **Profile Settings**
+3. Scroll down to the **API** section or go directly to: https://app.clockify.me/user/preferences#advanced
+4. Click **Generate** to create a new API key
+5. Copy the key and store it securely (it won't be shown again)
+
+> **Note:** If you're using a regional server (EU, US, UK, etc.), make sure to generate the API key from that region's app (e.g., https://euc1.clockify.me for EU).
 
 ## Development
 
