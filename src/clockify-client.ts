@@ -520,7 +520,7 @@ export function createClockifyClient(): ClockifyClient {
     throw new Error('CLOCKIFY_API_KEY environment variable is required');
   }
 
-  const region = (process.env.CLOCKIFY_REGION || 'euc1') as Region;
+  const region = (process.env.CLOCKIFY_REGION || 'global') as Region;
   const workspaceId = process.env.CLOCKIFY_WORKSPACE_ID;
 
   return new ClockifyClient({

@@ -38,6 +38,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Honeyfield-Org/clockify-mcp.git"
+    "url": "git+https://github.com/Honeyfield-Org/clockify-mcp.git"
   }
 }

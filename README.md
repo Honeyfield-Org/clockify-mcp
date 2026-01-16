@@ -21,15 +21,15 @@ npx @honeyfield/clockify-mcp
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `CLOCKIFY_API_KEY` | Yes | - | Your Clockify API key |
-| `CLOCKIFY_REGION` | No | `euc1` | API region (see below) |
+| `CLOCKIFY_REGION` | No | `global` | API region (see below) |
 | `CLOCKIFY_WORKSPACE_ID` | No | - | Default workspace ID |
 
 ### Regions
 
 | Region | Description |
 |--------|-------------|
-| `global` | Global (api.clockify.me) |
-| `euc1` | EU (euc1.clockify.me) - Default |
+| `global` | Global (api.clockify.me) - Default |
+| `euc1` | EU (euc1.clockify.me) |
 | `use2` | USA (use2.clockify.me) |
 | `euw2` | UK (euw2.clockify.me) |
 | `apse2` | Australia (apse2.clockify.me) |
@@ -45,8 +45,7 @@ Add to your Claude configuration:
       "command": "npx",
       "args": ["@honeyfield/clockify-mcp"],
       "env": {
-        "CLOCKIFY_API_KEY": "<your-api-key>",
-        "CLOCKIFY_REGION": "euc1"
+        "CLOCKIFY_API_KEY": "<your-api-key>"
       }
     }
   }
