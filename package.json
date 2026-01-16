@@ -1,0 +1,43 @@
+{
+  "name": "@honeyfield/clockify-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for Clockify Time Tracking API",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "clockify-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "inspect": "npx @anthropic-ai/mcp-inspector dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "clockify",
+    "time-tracking",
+    "model-context-protocol"
+  ],
+  "author": "Honeyfield",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Honeyfield-Org/clockify-mcp.git"
+  }
+}
