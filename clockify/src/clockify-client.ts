@@ -1,4 +1,26 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
+
+/**
+ * Returns the current local time in ISO 8601 format with timezone offset.
+ * Example: "2024-01-15T14:30:00+01:00"
+ */
+export function getLocalISOString(): string {
+  const now = new Date();
+  const offset = now.getTimezoneOffset();
+  const offsetHours = Math.floor(Math.abs(offset) / 60);
+  const offsetMinutes = Math.abs(offset) % 60;
+  const sign = offset <= 0 ? '+' : '-';
+
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${sign}${String(offsetHours).padStart(2, '0')}:${String(offsetMinutes).padStart(2, '0')}`;
+}
+
 import type {
   Region,
   ClockifyConfig,
@@ -454,7 +476,7 @@ export class ClockifyClient {
   }
 
   async stopTimer(workspaceId: string, userId: string): Promise<TimeEntry> {
-    const end = new Date().toISOString();
+    const end = getLocalISOString();
     const response = await this.api.patch<TimeEntry>(
       `/workspaces/${workspaceId}/user/${userId}/time-entries`,
       { end }

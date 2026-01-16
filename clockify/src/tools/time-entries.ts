@@ -1,6 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import { ClockifyClient } from '../clockify-client.js';
+import { ClockifyClient, getLocalISOString } from '../clockify-client.js';
 
 export function registerTimeEntryTools(
   server: McpServer,
@@ -144,7 +144,7 @@ export function registerTimeEntryTools(
     },
     async ({ workspaceId, ...data }) => {
       const entry = await client.startTimer(workspaceId, {
-        start: new Date().toISOString(),
+        start: getLocalISOString(),
         ...data,
       });
       return {
