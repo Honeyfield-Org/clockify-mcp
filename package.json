@@ -7,11 +7,16 @@
   "bin": {
     "clockify-mcp": "dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
-    "inspect": "npx @anthropic-ai/mcp-inspector dist/index.js"
+    "inspect": "npx @anthropic-ai/mcp-inspector dist/index.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "mcp",
@@ -33,11 +38,12 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Honeyfield-Org/clockify-mcp.git"
+  },
+  "homepage": "https://github.com/Honeyfield-Org/clockify-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Honeyfield-Org/clockify-mcp/issues"
   }
 }
