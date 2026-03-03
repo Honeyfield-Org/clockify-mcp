@@ -1,0 +1,31 @@
+{
+  "name": "@honeyfield/chat-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for Honeyfield Chat Platform API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "honeyfield-chat-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "inspect": "npx @modelcontextprotocol/inspector dist/index.js"
+  },
+  "keywords": ["mcp", "honeyfield", "chat", "ai", "model-context-protocol"],
+  "author": "Honeyfield",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
